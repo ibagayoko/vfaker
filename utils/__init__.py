@@ -18,7 +18,7 @@ def _add_pad(voices, maximum_size):
             final[:voices[i][j].shape[0], :] += j_element
             #print(final.shape)
             voices[i][j]=final
-        voices = np.array(voices)
+    voices = np.array(voices)
     # print(voices.shape)
     return voices
 def _largest_size(mels):
