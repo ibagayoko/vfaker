@@ -63,8 +63,8 @@ def build_model(batch_size=10, N_samples=23, Mel_dim=80, tframe = 201, N_prenet=
     # We reshae for GLU Layer
     x = Lambda(_reshapeAndTranspose)(x)
     # The GLU Layer
-    for _ in range(N_conv):
-        x = Conv1DGLU(128, name='glulayer')(x)
+    for i in range(N_conv):
+        x = Conv1DGLU(128, name='glulayer{}'.format(i))(x)
     # We reshae for GLU Layer
     x = Lambda(_undoReshapeAndTranspose )(x)
 
