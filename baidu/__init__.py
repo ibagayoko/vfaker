@@ -1,7 +1,7 @@
 import keras
 import tensorflow as tf
 from keras.layers import Input, Dense, Lambda, Flatten
-from baidu.layers import Conv1DGLU, MultiHeadAttention, TempMasking
+from .layers import Conv1DGLU, MultiHeadAttention, TempMasking
 
 
 
