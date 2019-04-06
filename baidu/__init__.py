@@ -17,6 +17,7 @@ def build_model(batch_size=10, N_samples=23, Mel_dim=80, tframe = 201, N_prenet=
         """
         inputs = tf.reshape(inputs,  (batch_size*N_samples,tframe, int(x.shape[3])))
         inputs =  tf.transpose(inputs,   [1, 0,2])
+        return inputs
 
     def _undoReshapeAndTranspose(inputs):
         """ 
@@ -24,6 +25,7 @@ def build_model(batch_size=10, N_samples=23, Mel_dim=80, tframe = 201, N_prenet=
         """
         inputs =  tf.transpose(inputs,   [1, 0, 2])
         inputs = tf.reshape(inputs,  (batch_size, N_samples,tframe, int(x.shape[2])))
+        return inputs
 
     def GlobalMeanPooling(inputs):
         return tf.keras.backend.mean(inputs, axis=2)
